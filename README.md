@@ -1,7 +1,8 @@
-# 100_NLP_challenge
+﻿# 100_NLP_challenge
 My solutions for the 100 NLP drill exercises from Tohoku University in Japan
 
 Chapter 1: Preparation Movement
+
 00. Reverse order of character strings
 Obtain the character string of the character string "stressed" arranged in reverse (from the end to the beginning).
 
@@ -37,6 +38,7 @@ Use this function to encrypt and decrypt English messages.
 Create a program that randomly rearranges the order of other characters, leaving the beginning and ending letters of each word for word strings separated by spaces. However, words whose length is 4 or less are not rearranged. Give an appropriate English sentence (eg "I could not believe that I think actually understand what I was reading: the phenomenal power of the human mind.") And confirm the execution result.
 
 Chapter 2: Basics of UNIX Commands
+
 hightemp.txt is a file that stores the record of the highest temperature in Japan in tab-delimited format of "prefecture" "point" "℃" "day". Create a program to perform the following processing and execute hightemp.txt as an input file. Furthermore, execute the same process with the UNIX command and check the execution result of the program.
 
 10. Count the number of rows
@@ -68,6 +70,7 @@ Arrange each line in the reverse order of the third column number (note: sort th
 
 19. Find frequency of occurrence of character strings in the first column of each line and arrange them in descending order of appearance frequency
 Find the appearance frequencies of character strings in the first column of each line, and arrange them in descending order of their appearance. To check, use cut, uniq, sort command.
+
 
 Chapter 3: Regular Expressions
 There is a file jawiki-country.json.gz which exported Wikipedia articles in the following format .
@@ -107,10 +110,11 @@ In addition to the processing of 27, remove the MediaWiki markup as much as poss
 29. Acquire the URL of the flag image
 Use the contents of the template and obtain the URL of the flag image. (Hint: MediaWiki API of imageinfo by calling, it is sufficient to convert the file reference to the URL)
 
+
 Chapter 4: Morphological Analysis
 Morphologically analyze the sentence ( neko.txt ) of Natsume Soseki's novel "I am a cat" with MeCab and save the result in a file named neko.txt.mecab. Using this file, implement the program corresponding to the following questions.
 
-For matters 37, 38 and 39 , use matplotlib or Gnuplot .
+For problems 37, 38 and 39 , use matplotlib or Gnuplot.
 
 30. Read morphological analysis result
 Implement a program to read the morphological analysis result (neko.txt.mecab). However, each morpheme is stored in a mapping type whose key is surface type, base type, part of speech (pos), part of speech sub classification 1 (pos 1), and one sentence is expressed as a list of morphemes (mapping type) Do it. In the remaining problems in chapter 4, use the program created here.
@@ -142,6 +146,7 @@ Draw a histogram of word appearance frequency (appearance frequency on the horiz
 39. Zipf's law
 Plot the log-log graph with the word occurrence frequency ranking on the horizontal axis and its occurrence frequency on the vertical axis.
 
+
 Chapter 5: Dependency Analysis
 Analyze the sentence ( neko.txt ) of Natsume Soseki's novel "I am a cat" with CaboCha and save the result in a file called neko.txt.cabocha. Using this file, implement the program corresponding to the following questions.
 
@@ -160,7 +165,7 @@ If a phrase containing a noun relates to a phrase containing a verb, extract the
 44. Visualization of dependency trees
 Visualize the dependency tree of a given sentence as a directed graph. The visualization, the dependency tree DOT language converted into, Graphviz preferably used. You can also use pydot to directly visualize a directed graph from Python .
 
-Extraction of case pattern of verb
+45. Extraction of case pattern of verb
 I would like to investigate the cases that Japanese predicates can take, considering the sentence being used this time as a corpus. Predicate a verb, think the sentence of a phrase related to a verb as a case, and output the predicate and case in a tab delimited format. However, the output should satisfy the following specifications.
 
 In a phrase including a verb, the basic form of the leftmost verb is used as a predicate
@@ -174,6 +179,7 @@ Save the output of this program in a file and confirm the following items using 
 
 Combination of frequent predicates and case patterns in corpus
 Case pattern of verbs "do", "see" and "give" (order in descending order of occurrence frequency in corpus)
+
 46. ​​Extraction of verb case frame information
 Modify the program of 45 and output the term (the phrase itself pertaining to the predicate itself) in tab-delimited form following the predicate and case pattern. In addition to the specification of 45, it should satisfy the following specifications.
 
@@ -183,6 +189,7 @@ Consider the example sentence (8th sentence of neko.txt.cabocha) that "I saw hum
 
 始める  で      ここで
 見る    は を   吾輩は ものを
+
 47. Mining of functional verb syntax
 I want to pay attention only when there is a social change noun in the verb 's won case. Change the program of 46 to satisfy the following specifications.
 
@@ -197,6 +204,7 @@ Save the output of this program in a file and confirm the following items using 
 
 Predicates frequently occurring in corpus (social change connection noun + with + verb)
 Frequent predicates and particle patterns in the corpus
+
 48. Extraction of path from noun to root
 For a phrase containing all nouns in the sentence, extract the path from that phrase to the root of the syntax tree. However, the path on the syntax tree shall satisfy the following specifications.
 
@@ -208,6 +216,7 @@ From the sentence "I saw human beings for the first time here" (8th sentence of 
 ここで -> 始めて -> 人間という -> ものを -> 見た
 人間という -> ものを -> 見た
 ものを -> 見た
+
 49. Extraction of dependency path between nouns
 Extract the shortest dependency path connecting all pairs of noun phrases in the sentence. However, if the clause number of the noun phrase pair is iAnd j( I < j), The dependency path shall satisfy the following specifications.
 
@@ -225,6 +234,7 @@ Xは | Yを | 見た
 Xで -> 始めて -> Y
 Xで -> 始めて -> 人間という -> Y
 Xという -> Y
+
 Chapter 6: Processing English Text
 For the English text ( nlp.txt ), perform the following processing.
 
@@ -258,8 +268,10 @@ Based on the result of the dependency analysis of Stanford Core NLP (collapsed-d
 Predicates: words with dependencies of nsubj relationships and dobj relationships
 Subject: dependent from predicate to nsubj relation
 Object: Dependent from dojj relationship from predicate
+
 59. Analysis of S-expression
 Read Stanford Core NLP phrase structure analysis result (S expression) and display all noun phrases (NP) in the sentence. Also display all nesting noun phrases.
+
 
 Chapter 7: Databases
 artist.json.gz is an open music database MusicBrainz that converts things related to artists into JSON format and compresses them in gzip format. In this file, information on one artist is stored in a single line in JSON format. The outline of the JSON format is as follows.
@@ -319,6 +331,7 @@ Seek artist / top 10 with more ratings votes among artists who are tagged as "da
 69. Creating a web application
 Create a Web application that displays information on artists matching search criteria entered by users. Specify search conditions with artist name, artist's alias, tag, etc, and display the list of artist information in order of highest rating etc.
 
+
 Chapter 8: Machine Learning
 In this chapter, we use the sentence polarity dataset v1.0 of Movie Review Data published by Bo Pang and Lillian Lee to a task (polarity analysis) to classify sentences as positive (positive) or negative (negative) To tackle.
 
@@ -357,6 +370,7 @@ In the experiment of 76-77, we used case for learning also for evaluation, so it
 79. Rate of conformity - rendering recall rate graph
 Draw the relevance ratio - recall rate graph by changing the threshold value of the classification of the logistic regression model.
 
+
 Chapter 9: Vector Space Method (I)
 enwiki-20150112-400-r10-105752.txt.bz2 randomly sampled 1/10 of articles of about 400 words or more among English Wikipedia articles as of January 12, 2015 105, 752 The text of the article is compressed in bzip 2 format. Using this text as a corpus, I want to learn vectors (distributed expressions) that represent meanings of words. In the first half of chapter 9, the principal component analysis is applied to the word context co-occurrence matrix created from the corpus, and the process of learning the word vector is divided into several processes and implemented. In the second half of chapter 9, we calculate word similarity and analogy (analogy) using word vector (300 dimensions) obtained by learning.
 
@@ -379,6 +393,8 @@ All the words t appearing in the corpus created in 81, The word tAnd the context
 
 A word tBefore and after dThe word is defined as context word c(Except that the word tIt does not include it)
 The word tEvery time you choose, the context width dIs { 1 , 2 , 3 , 4 , 5 }Within the range of.
+
+
 83. Measurement of Word / Context Frequency
 Using the output of 82, find the following appearance distribution and constant.
 
@@ -386,6 +402,7 @@ f( t , c ): Word tAnd the context word cCo-occurrence frequency
 f( t , * ): Word tNumber of occurrences
 f( * , C ): Context word cNumber of occurrences
 N: Total number of occurrences of word and context word pair
+
 84. Creating a word context matrix
 Using the output of 83, the word context matrix XMake it. However, the matrix XOf each element Xt cIs defined as follows.
 
@@ -407,6 +424,7 @@ Read the semantic vector of the word obtained in 85, output 10 words with high c
 
 89. Analogy based on additive constructivity
 Read the semantic vector of the word obtained in 85, calculate vec ("Spain") - vec ("Madrid") + vec ("Athens"), output 10 words with high similarity and its similarity Do it.
+
 
 Chapter 10: Vector Space Method (II)
 In chapter 10, we will continue to learn word vectors as in the previous chapter.
